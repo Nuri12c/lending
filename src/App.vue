@@ -1,26 +1,38 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <body>
+    <div class="bg-white">
+      <HeaderApp />
+      <HeroApp />
+      <LogosList />
+    </div>
+    <DealsBlock/>
+    <ArrivalsApp/>
+  </body>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import HeaderApp from "./components/header/HeaderApp.vue";
+import HeroApp from "./components/HeroApp/HeroApp.vue";
+import LogosList from "./components/LogosList/LogosList.vue";
+import DealsBlock from "./components/DealsBlock/DealsBlock.vue";
+import ArrivalsApp from "./components/NewArriwals/ArrivalsApp.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    HeaderApp,
+    HeroApp,
+    LogosList,
+    DealsBlock,
+    ArrivalsApp
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+.bg-white {
+  background-color: #fff;
 }
 </style>

@@ -1,0 +1,85 @@
+@import './style.scss';
+@import './normalize.css';
+@import '../fonts/fonts.scss';
+@import './variables.scss';
+
+
+
+html, body {
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: none;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  margin: 0;
+}
+h1 {
+  font-family: 'Volkhov', 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: 46px;
+  margin: 0;
+  letter-spacing: 0;
+  line-height: 100%;
+  color: $hero-colour;
+}
+h2 {
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  font-weight: 500;
+  font-size: 28px;
+  margin: 0;
+  letter-spacing: 0;
+  line-height: 100%;
+  color: $hero-colour;
+}
+h3 {
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: 0;
+  line-height: 100%;
+  color: $hero-colour;
+}
+p {
+  font-family: 'Poppins', 'Times New Roman', Times, serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0;
+  letter-spacing: 0;
+  line-height: 100%;
+  color: $hero-colour;
+}
+button {
+  background-color: #000000;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  height: 56px;
+  text-align: center;
+  align-content: center;
+  box-shadow: 1px 10px 30px #4848484e;
+}
+.button-text {
+  color: #fff;
+  transform: translateY(1px);
+}
+section {
+  padding-left: 30px;
+  padding-right: 30px;
+
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+}

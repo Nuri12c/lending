@@ -1,0 +1,36 @@
+
+/* Подключение Volkhov */
+@font-face {
+  font-family: 'Volkhov';
+  src:    url('../fonts/Volkhov/Volkhov-Regular.ttf') format('truetype');
+  font-weight: 400; /* Обычный вес шрифта */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Volkhov';
+  src:      url('../fonts/Volkhov/Volkhov-Bold.ttf') format('truetype'); /* Добавьте файлы .ttf */
+  font-weight: 700; /* Полужирный вес шрифта */
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src:    url('../fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+  font-weight: 400; /* Обычный вес шрифта */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src:      url('../fonts/Poppins/Poppins-Medium.ttf') format('truetype'); /* Добавьте файлы .ttf */
+  font-weight: 500; /* Полужирный вес шрифта */
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Digital Numbers Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Digital Numbers Regular'), url('../fonts/DigitalNumbers/DigitalNumbers-Regular.ttf') format('truetype');
+  }
