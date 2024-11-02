@@ -49,6 +49,7 @@ export default {
 
 .hero {
   margin-bottom: 30px;
+  
 }
 .hero__container {
   display: flex;

@@ -1,11 +1,11 @@
 <template>
   <body>
-    <div class="bg-white">
-      <HeaderApp />
-      <HeroApp />
-      <LogosList />
+    <HeaderApp />
+    <HeroApp />
+    <LogosList />
+    <div class="dark-bg">
+      <DealsBlock/>
     </div>
-    <DealsBlock/>
     <ArrivalsApp/>
   </body>
 </template>
@@ -31,8 +31,7 @@ export default {
 </script>
 
 <style>
-
-.bg-white {
-  background-color: #fff;
+.dark-bg {
+  background-color: #F5F5F5;
 }
 </style>

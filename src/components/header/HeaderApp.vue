@@ -25,6 +25,7 @@ export default {
   padding-top: 70px;
   height: 56px;
   padding-bottom: 94px;
+  
 }
 .header__container {
   height: 56px;
