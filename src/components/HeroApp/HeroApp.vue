@@ -49,7 +49,7 @@ export default {
 
 .hero {
   margin-bottom: 30px;
-  
+
 }
 .hero__container {
   display: flex;
@@ -66,7 +66,7 @@ export default {
 .hero__left-block {
   width: 392px;
   height: 756px;
-  background-color: #88c7fe;
+  background: url(./assets/left-hero-img.jpg);
 }
 .hero__ceter-block {
   width: 426px;
@@ -78,11 +78,11 @@ export default {
 .hero__right-block {
   width: 392px;
   height: 756px;
-  background-color: #88c7fe;
+  background: url(./assets/right-hero-img.jpg);
 }
 .hero__top-img {
   height: 150px;
-  background-color: #6fc4b6;
+  background: url(./assets/top-hero-img.jpg);
   border-radius: 10px;
   margin-bottom: 0px;
   width: 426px;
@@ -94,7 +94,7 @@ export default {
 }
 .hero__bottom-img {
   height: 150px;
-  background-color: #6fc4b6;
+  background: url(./assets/bottob-hero-img.jpg);
   border-radius: 10px;
   width: 426px;
   margin-top: 1px;

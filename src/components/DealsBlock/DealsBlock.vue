@@ -21,6 +21,7 @@
     </div>
     <div class="deals__right-item">
       <DealsSlider/>
+      
     </div>
   </div>
 </section>
@@ -41,7 +42,7 @@ export default {
 .deals {
   margin: 0 auto;
   max-width: 1280px;
-  height: 882px;
+  height: 730px;
   padding-top: 150px;
 }
 .deals__hero {

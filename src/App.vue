@@ -7,6 +7,8 @@
       <DealsBlock/>
     </div>
     <ArrivalsApp/>
+    <PeakyBlinders/>
+    <SectionQuality/>
   </body>
 </template>
 
@@ -17,6 +19,8 @@ import HeroApp from "./components/HeroApp/HeroApp.vue";
 import LogosList from "./components/LogosList/LogosList.vue";
 import DealsBlock from "./components/DealsBlock/DealsBlock.vue";
 import ArrivalsApp from "./components/NewArriwals/ArrivalsApp.vue";
+import PeakyBlinders from "./components/PeakyBlinders/PeakyBlinders.vue";
+import SectionQuality from "./components/Sectionquality/SectionQuality.vue";
 
 export default {
   name: "App",
@@ -25,7 +29,9 @@ export default {
     HeroApp,
     LogosList,
     DealsBlock,
-    ArrivalsApp
+    ArrivalsApp,
+    PeakyBlinders,
+    SectionQuality
   },
 };
 </script>

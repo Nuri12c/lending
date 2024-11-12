@@ -3,8 +3,7 @@
     <div class="container arrivals__container">
       <h1 class="arrivals__heading">New Arrivals</h1>
       <p class="arrivals__p">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
-        totam modi, ex sapiente quaerat consequatur est eaque nisi ea enim!
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis <br> ultrices sollicitudin aliquam sem. Scelerisque duis ultrices sollicitudin
       </p>
 
       <div class="arrivals__buttons">
@@ -13,27 +12,27 @@
           :key="index"
           @click="setLabel(button.label)"
           class="arrivals__button"
-        >
-          {{ button.label }}
+        ><p class="button-text">{{ button.label }}</p>
+
         </button>
       </div>
 
       <div class="arrivals__card-container" >
         <ul v-for="(card, index) in cards" :key="index" class="arrivals__card-list" >
-          <li v-if="card.label === labelElement" class="arrivals__card-item" :style="{ animationDelay: `${index * 0.1}s` }">
+          <li :class="{ 'mr-0': (index + 1) % 3 === 0 }" class="arrivals__card-item" :style="{ animationDelay: `${index * 0.1}s` }">
             <img class="arrivals__img" :src="card.img" alt="img">
             {{ card.heading }}
           </li>
 
         </ul>
       </div>
-      <button>dfbdf</button>
+      <button class="arrivals__button-more"><p class="button-text">View More</p></button>
     </div>
   </section>
 </template>
 
 <script>
-
+import DataMixin from '@/services/DataMixin';
 
 export default {
   data() {
@@ -46,115 +45,10 @@ export default {
         { label: `Men Accessories` },
         { label: `Discount Deals` },
       ],
-      cards: [
-        {
-          label: `Men's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/107847.jpg')
-        },
-        {
-          label: `Men's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/107847.jpg')
-        },
-        {
-          label: `Men's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/107847.jpg')
-        },
-        {
-          label: `Men's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/107847.jpg')
-        },
-        {
-          label: `Men's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/107847.jpg')
-        },
-        {
-          label: `Men's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/107847.jpg')
-        },
-        {
-          label: `Womens's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/Images.jpg')
-        },
-        {
-          label: `Womens's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/Images.jpg')
-        },
-        {
-          label: `Womens's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/Images.jpg')
-        },
-        {
-          label: `Womens's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/Images.jpg')
-        },
-        {
-          label: `Womens's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/Images.jpg')
-        },
-        {
-          label: `Womens's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/Images.jpg')
-        },
-        {
-          label: `Womens's fashion`,
-          heading: "new kurtka",
-          description: "horoshaya",
-          stars: 1,
-          price: 123,
-          img: require('./assets/Images.jpg')
-        },
 
-      ],
     };
   },
+  mixins: [DataMixin],
   computed: {
 
   },
@@ -167,38 +61,60 @@ export default {
 </script>
 
 <style>
+.arrivals {
+  margin-bottom: 135px;
+}
 .arrivals__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 155px;
+  transform: translateX(10px);
+}
+.arrivals__heading {
+  margin-bottom: 30px;
 }
 .arrivals__p {
-  width: 400px;
   margin: 0 auto;
+  line-height: 26px;
   margin-bottom: 50px;
 }
 .arrivals__buttons {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin-bottom: 50px;
+}
+.arrivals__button {
+  width: 207px;
 }
 .arrivals__card-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+
 }
 .arrivals__card-item {
-  width: 300px;
-  height: 300px;
-  background-color: cadetblue;
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 50px;
+  width: 386px;
+  height: 428px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 60px #cecece4e;
+  border-radius: 10px;
+  padding-top: 11px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  margin-right: 60px;
+  margin-bottom: 60px;
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   animation: fadeInUp 0.3s ease-in-out forwards;
+}
+.mr-0 {
+  margin-right: 0;
 }
 @keyframes fadeInUp {
   from {
@@ -211,6 +127,13 @@ export default {
   }
 }
 .arrivals__img {
-  width: 300px;
+  width: 335px;
+  height: 245px;
+  margin: 0 auto;
+}
+.arrivals__button-more {
+  width: 208px;
+  transform: translateY(-15px);
+  margin: 0 auto;
 }
 </style>

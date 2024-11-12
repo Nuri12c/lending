@@ -1,56 +1,71 @@
 <template>
-<div class="DealsSlider">
-  <button class="slider__button">'--'</button>
-  <button class="slider__button">'--'</button>
-  <div class="heroCard"></div>
-  <div class="secondCard"></div>
-  <div class="thirdCard"></div>
-  <div class="fourCard"></div>
-</div>
-
+  <div class="DealsSlider">
+    <button class="slider__button" @click="nextSlide"><p class="button__symbol">&lt;</p></button>
+    <button class="slider__button" @click="prevSlide"><p class="button__symbol">&gt;</p></button>
+    <div :style="{ height: index === currentIndexes[0] ? '582px' : '490px' }" v-for="(index, key) in currentIndexes" :key="key" :class="CardImg + index">
+      <div v-if="index === currentIndexes[0]" class="ho">sfvsfdvb</div>
+    </div>
+  </div>
+  <p>fff</p>
 </template>
 
 <script>
 export default {
-  data()  {
+  data() {
     return {
-
-    }
+      CardImg: 'CardImg', // Класс для карточек
+      currentIndexes: [0, 1, 2, 3],
+      maxIndex: 3, // Максимальное значение индекса
+    };
   },
   methods: {
-
-
-  }
-}
+    nextSlide() {
+      this.currentIndexes = this.currentIndexes.map((index) => {
+        return (index + 1) % (this.maxIndex + 1); // Используем модуль для циклического сдвига
+      });
+    },
+    prevSlide() {
+      this.currentIndexes = this.currentIndexes.map((index) => {
+        return (index - 1 + this.maxIndex + 1) % (this.maxIndex + 1); // Используем модуль для циклического сдвига
+      });
+    },
+  },
+};
 </script>
+
 
 <style>
 .DealsSlider {
   display: flex;
   overflow: visible;
 }
-.heroCard {
+.CardImg0 {
   width: 406px;
   height: 582px;
-  background-color: antiquewhite;
+  background: url(../assets/first-slider-img.jpg);
   margin-right: 24px;
+  background-size: cover;
 }
-.secondCard {
+.CardImg1 {
   width: 372px;
   height: 490px;
-  background-color: rgb(142, 108, 63);
+  background: url(../assets/second-slider-img.jpg);
   margin-right: 24px;
+  background-size: cover;
 }
-.thirdCard {
+.CardImg2 {
   width: 372px;
   height: 486px;
-  background-color: rgb(84, 59, 26);
+  background: url(../assets/third-slider-img.jpg);
   margin-right: 24px;
+  background-size: cover;
 }
-.fourCard {
+.CardImg3 {
   width: 372px;
   height: 486px;
-  background-color: rgb(19, 13, 5);
+  background: url(../assets/four-slider-img.jpeg);
+  margin-right: 24px;
+  background-size: cover;
 }
 .slider__button {
   margin-right: 14px;
@@ -60,5 +75,8 @@ export default {
   border-radius: 50%;
   margin-top: auto;
   transform: translate(-13px, 2px);
+}
+.button__symbol {
+  font-size: 25px;
 }
 </style>
