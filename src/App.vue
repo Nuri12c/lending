@@ -9,6 +9,14 @@
     <ArrivalsApp/>
     <PeakyBlinders/>
     <SectionQuality/>
+    <FollowUs/>
+    <h1>wdvef</h1>
+    <div>
+    <CustomersCard/>
+    <SubscribeUs/>
+    <footerApp/>
+    </div>
+
   </body>
 </template>
 
@@ -21,6 +29,13 @@ import DealsBlock from "./components/DealsBlock/DealsBlock.vue";
 import ArrivalsApp from "./components/NewArriwals/ArrivalsApp.vue";
 import PeakyBlinders from "./components/PeakyBlinders/PeakyBlinders.vue";
 import SectionQuality from "./components/Sectionquality/SectionQuality.vue";
+import FollowUs from "./components/FollowUs/FollowUs.vue";
+import CustomersCard from "./components/Customers/CustomersCard.vue";
+import SubscribeUs from "./components/SubscribeUs/SubscribeUs.vue";
+import footerApp from "./components/footer/footerApp.vue";
+
+
+
 
 export default {
   name: "App",
@@ -31,7 +46,16 @@ export default {
     DealsBlock,
     ArrivalsApp,
     PeakyBlinders,
-    SectionQuality
+    SectionQuality,
+    FollowUs,
+    CustomersCard,
+    SubscribeUs,
+    footerApp
+  },
+  data() {
+    return {
+
+    }
   },
 };
 </script>

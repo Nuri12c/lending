@@ -3,64 +3,78 @@
     <div class="container arrivals__container">
       <h1 class="arrivals__heading">New Arrivals</h1>
       <p class="arrivals__p">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque duis <br> ultrices sollicitudin aliquam sem. Scelerisque duis ultrices sollicitudin
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Scelerisque
+        duis <br />
+        ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
+        sollicitudin
       </p>
 
       <div class="arrivals__buttons">
         <button
-          v-for="(button, index) in buttons"
-          :key="index"
+          v-for="button in buttons"
+          :key="button.label"
           @click="setLabel(button.label)"
+          :class="{ active: button.label === labelElement }"
           class="arrivals__button"
-        ><p class="button-text">{{ button.label }}</p>
-
+        >
+          <p class="button-text">{{ button.label }}</p>
         </button>
       </div>
 
-      <div class="arrivals__card-container" >
-        <ul v-for="(card, index) in cards" :key="index" class="arrivals__card-list" >
-          <li :class="{ 'mr-0': (index + 1) % 3 === 0 }" class="arrivals__card-item" :style="{ animationDelay: `${index * 0.1}s` }">
-            <img class="arrivals__img" :src="card.img" alt="img">
-            {{ card.heading }}
-          </li>
+      <div class="arrivals__card-container">
+        <div  v-for="(item, index) in getAllData[labelElement]" :key="index">
+          <div class="arrivals__card-item">
+            <div :style="{ 'background-image': `url(${item[img]})`}" class="arrivals__img"></div>
+            <h3>{{ item[name] }}</h3>
+            <h3>{{ item[price] }}</h3>
+            <div class="">{{ item[rating] }}</div>
 
-        </ul>
+          </div>
+        </div>
       </div>
-      <button class="arrivals__button-more"><p class="button-text">View More</p></button>
+      <!-- <button class="arrivals__button-more">
+        <p class="button-text">View More</p>
+      </button> -->
     </div>
   </section>
 </template>
 
 <script>
-import DataMixin from '@/services/DataMixin';
-
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
       labelElement: `Men's fashion`,
       buttons: [
         { label: `Men's fashion` },
-        { label: `Womens's fashion` },
+        { label: `Women's fashion` },
         { label: `Women Accessories` },
         { label: `Men Accessories` },
         { label: `Discount Deals` },
       ],
-
+      name: 'name', /* создал отдельную переменную для того чтобы vetur не ругался про типы данных|| через эту переменную он ищет правильный ключ на сервере, конкретно тут - name */
+      img: 'img',
+      price: 'price',
+      rating: 'rating'
     };
-  },
-  mixins: [DataMixin],
-  computed: {
 
   },
+
+  computed: {
+    ...mapGetters(["getAllData" ]),
+
+  },
+
   methods: {
     setLabel(label) {
-      this.labelElement = label
-    }
-  }
+      this.labelElement = label;
+    },
+  },
+
 };
 </script>
 
-<style>
+<style scoped>
 .arrivals {
   margin-bottom: 135px;
 }
@@ -88,13 +102,16 @@ export default {
 }
 .arrivals__button {
   width: 207px;
+  background-color: #8a8a8a;
+}
+.active {
+  background-color: #000000;
 }
 .arrivals__card-container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 .arrivals__card-item {
   width: 386px;
@@ -106,9 +123,8 @@ export default {
   display: flex;
   flex-direction: column;
   margin-left: 0;
-  margin-right: 60px;
+  margin-right: 40px;
   margin-bottom: 60px;
-  opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
   animation: fadeInUp 0.3s ease-in-out forwards;
@@ -116,20 +132,13 @@ export default {
 .mr-0 {
   margin-right: 0;
 }
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+
 .arrivals__img {
   width: 335px;
   height: 245px;
   margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .arrivals__button-more {
   width: 208px;
